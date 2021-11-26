@@ -1,0 +1,106 @@
+$oneColor: rgb(233, 245, 219);
+$twoColor: rgb(207, 225, 185);
+$threeColor: rgb(181, 201, 154);
+$fourColor: rgb(151, 169, 124);
+$fiveColor: rgb(135, 152, 106);
+$sixColor: rgb(113, 131, 85);
+
+@mixin small-text($size, $color) {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $size;
+    color: $color;
+    text-decoration: none;
+}
+
+@mixin main-text($size, $color) {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin flex-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+@mixin socials {
+    color: lightgrey;
+    transition: color 0.2s;
+    text-decoration: none;
+    margin: 0px 10px;
+    size: 50px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.backgroundColor {
+    background-color: $threeColor;
+    height: 100vh;
+}
+
+.navBox {
+    &__box {
+        height: 40px;
+        margin-bottom: 20px;
+    }
+    &__display {
+        @include flex-nav;
+    }
+    &--color {
+        background-color: $fiveColor;
+    }
+}
+
+.list {
+    list-style: none;
+    @include main-text(small, white);
+}
+.smallText {
+    @include small-text(small, white);
+    &__hover:hover {
+        color: pink;
+    }
+}
+
+.mainText {
+    &__header {
+        @include main-text(big, white);
+        text-align: center;
+        margin-bottom: 10px;
+
+        &--left {
+            text-align: left;
+            margin-left: 375px;
+        }
+    }
+
+    &__paragraph {
+        @include main-text(medium, white);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+.social {
+    &__align {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__icons {
+        color: white;
+        transition: color 0.2s;
+        text-decoration: none;
+        margin: 0px 10px;
+        font-size: 25px;
+
+        &--hover:hover {
+            color: black;
+        }
+    }
+}
