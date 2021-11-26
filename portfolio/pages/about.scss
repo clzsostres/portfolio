@@ -1,3 +1,38 @@
+$phone-size: 576px;
+$tablet-portrait-size: 768px;
+$tablet-landscape-size: 992px;
+$laptop-size: 1200px;
+
+@mixin phone {
+    @media only screen and (max-width: $phone-size) {
+        @content;
+    }
+}
+
+@mixin tablet-portrait {
+    @media only screen and (min-width: ($phone-size + 1)) and (max-width: $tablet-portrait-size) {
+        @content;
+    }
+}
+
+@mixin tablet-landscape {
+    @media only screen and (min-width: ($tablet-portrait-size + 1)) and (max-width: $tablet-landscape-size) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media only screen and (min-width: ($tablet-landscape-size + 1)) and (max-width: $laptop-size) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: ($laptop-size + 1)) {
+        @content;
+    }
+}
+
 @mixin images($height, $width) {
     height: $height;
     width: $width;
@@ -6,18 +41,110 @@
     object-fit: cover;
 }
 
-.photos {
-    &__about {
-        @include images(500px, 300px);
+@include phone {
+    .photos {
+        &__about {
+            @include images(500px, 300px);
+        }
+        &__logo {
+            @include images(200px, 100px);
+        }
     }
-    &__logo {
-        @include images(200px, 100px);
+
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        color: white;
     }
 }
 
-.about {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-    color: white;
+@include phone {
+    .photos {
+        &__about {
+            @include images(500px, 300px);
+        }
+        &__logo {
+            @include images(200px, 100px);
+        }
+    }
+
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        color: white;
+    }
+}
+
+@include tablet-portrait() {
+    .photos {
+        &__about {
+            @include images(600px, 400px);
+        }
+        &__logo {
+            @include images(300px, 200px);
+        }
+    }
+
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        color: white;
+    }
+}
+
+@include tablet-landscape() {
+    .photos {
+        &__about {
+            @include images(800px, 600px);
+        }
+        &__logo {
+            @include images(500px, 400px);
+        }
+    }
+
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        color: white;
+    }
+}
+
+@include laptop() {
+    .photos {
+        &__about {
+            @include images(900px, 700px);
+        }
+        &__logo {
+            @include images(600px, 500px);
+        }
+    }
+
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        color: white;
+    }
+}
+
+@include desktop() {
+    .photos {
+        &__about {
+            @include images(900px, 700px);
+        }
+        &__logo {
+            @include images(600px, 500px);
+        }
+    }
+
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        color: white;
+    }
 }

@@ -1,15 +1,120 @@
-.skills {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 300px;
+$phone-size: 576px;
+$tablet-portrait-size: 768px;
+$tablet-landscape-size: 992px;
+$laptop-size: 1200px;
+
+@mixin phone {
+    @media only screen and (max-width: $phone-size) {
+        @content;
+    }
 }
 
-.skillsText {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-    color: white;
-    height: 300px;
+@mixin tablet-portrait {
+    @media only screen and (min-width: ($phone-size + 1)) and (max-width: $tablet-portrait-size) {
+        @content;
+    }
+}
+
+@mixin tablet-landscape {
+    @media only screen and (min-width: ($tablet-portrait-size + 1)) and (max-width: $tablet-landscape-size) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media only screen and (min-width: ($tablet-landscape-size + 1)) and (max-width: $laptop-size) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: ($laptop-size + 1)) {
+        @content;
+    }
+}
+
+@include phone {
+    .skills {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 150px;
+    }
+
+    .skillsText {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        color: white;
+        height: 150px;
+    }
+}
+@include tablet-portrait() {
+    .skills {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 200px;
+    }
+
+    .skillsText {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        color: white;
+        height: 200px;
+    }
+}
+@include tablet-landscape() {
+    .skills {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 250px;
+    }
+
+    .skillsText {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        color: white;
+        height: 250px;
+    }
+}
+@include laptop() {
+    .skills {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 300px;
+    }
+
+    .skillsText {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        color: white;
+        height: 300px;
+    }
+}
+@include desktop() {
+    .skills {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 300px;
+    }
+
+    .skillsText {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        color: white;
+        height: 300px;
+    }
 }
