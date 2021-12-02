@@ -1,43 +1,10 @@
-$oneColor: rgb(233, 245, 219);
-$twoColor: rgb(207, 225, 185);
-$threeColor: rgb(181, 201, 154);
-$fourColor: rgb(151, 169, 124);
-$fiveColor: rgb(135, 152, 106);
-$sixColor: rgb(113, 131, 85);
+@use "color-palette";
+@use "mediaQueries";
+
 $phone-size: 576px;
 $tablet-portrait-size: 768px;
 $tablet-landscape-size: 992px;
 $laptop-size: 1200px;
-
-@mixin phone {
-    @media only screen and (max-width: $phone-size) {
-        @content;
-    }
-}
-
-@mixin tablet-portrait {
-    @media only screen and (min-width: ($phone-size + 1)) and (max-width: $tablet-portrait-size) {
-        @content;
-    }
-}
-
-@mixin tablet-landscape {
-    @media only screen and (min-width: ($tablet-portrait-size + 1)) and (max-width: $tablet-landscape-size) {
-        @content;
-    }
-}
-
-@mixin laptop {
-    @media only screen and (min-width: ($tablet-landscape-size + 1)) and (max-width: $laptop-size) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media only screen and (min-width: ($laptop-size + 1)) {
-        @content;
-    }
-}
 
 @mixin small-text($size, $color) {
     font-family: Arial, Helvetica, sans-serif;
@@ -74,11 +41,11 @@ $laptop-size: 1200px;
 }
 
 .backgroundColor {
-    background-color: $threeColor;
+    background-color: color-palette.$threeColor;
     height: 100vh;
 }
 
-@include phone {
+@include mediaQueries.phone {
     .navBox {
         &__box {
             height: 40px;
@@ -88,7 +55,7 @@ $laptop-size: 1200px;
             @include flex-nav;
         }
         &--color {
-            background-color: $fiveColor;
+            background-color: color-palette.$fiveColor;
         }
     }
 
@@ -99,7 +66,7 @@ $laptop-size: 1200px;
     .smallText {
         @include small-text(small, white);
         &__hover:hover {
-            color: pink;
+            color: color-palette.$hoverColor;
         }
     }
 
@@ -121,8 +88,17 @@ $laptop-size: 1200px;
             margin-bottom: 10px;
         }
     }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
 
     .social {
+        position: static;
+
         &__align {
             display: flex;
             align-items: center;
@@ -142,7 +118,7 @@ $laptop-size: 1200px;
     }
 }
 
-@include tablet-portrait() {
+@include mediaQueries.tablet-portrait() {
     .navBox {
         &__box {
             height: 50px;
@@ -152,7 +128,7 @@ $laptop-size: 1200px;
             @include flex-nav;
         }
         &--color {
-            background-color: $fiveColor;
+            background-color: color-palette.$fiveColor;
         }
     }
 
@@ -163,7 +139,7 @@ $laptop-size: 1200px;
     .smallText {
         @include small-text(medium, white);
         &__hover:hover {
-            color: pink;
+            color: color-palette.$hoverColor;
         }
     }
 
@@ -185,8 +161,16 @@ $laptop-size: 1200px;
             margin-bottom: 10px;
         }
     }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
 
     .social {
+        position: static;
         &__align {
             display: flex;
             align-items: center;
@@ -205,7 +189,7 @@ $laptop-size: 1200px;
         }
     }
 }
-@include tablet-landscape() {
+@include mediaQueries.tablet-landscape() {
     .navBox {
         &__box {
             height: 60px;
@@ -215,7 +199,7 @@ $laptop-size: 1200px;
             @include flex-nav;
         }
         &--color {
-            background-color: $fiveColor;
+            background-color: color-palette.$fiveColor;
         }
     }
 
@@ -226,7 +210,7 @@ $laptop-size: 1200px;
     .smallText {
         @include small-text(medium, white);
         &__hover:hover {
-            color: pink;
+            color: color-palette.$hoverColor;
         }
     }
 
@@ -249,7 +233,16 @@ $laptop-size: 1200px;
         }
     }
 
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+
     .social {
+        position: static;
         &__align {
             display: flex;
             align-items: center;
@@ -268,7 +261,7 @@ $laptop-size: 1200px;
         }
     }
 }
-@include laptop() {
+@include mediaQueries.laptop() {
     .navBox {
         &__box {
             height: 60px;
@@ -278,7 +271,7 @@ $laptop-size: 1200px;
             @include flex-nav;
         }
         &--color {
-            background-color: $fiveColor;
+            background-color: color-palette.$fiveColor;
         }
     }
 
@@ -289,7 +282,7 @@ $laptop-size: 1200px;
     .smallText {
         @include small-text(large, white);
         &__hover:hover {
-            color: pink;
+            color: color-palette.$hoverColor;
         }
     }
 
@@ -311,8 +304,16 @@ $laptop-size: 1200px;
             margin-bottom: 10px;
         }
     }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
 
     .social {
+        position: static;
         &__align {
             display: flex;
             align-items: center;
@@ -331,7 +332,7 @@ $laptop-size: 1200px;
         }
     }
 }
-@include desktop() {
+@include mediaQueries.desktop() {
     .navBox {
         &__box {
             height: 60px;
@@ -341,7 +342,7 @@ $laptop-size: 1200px;
             @include flex-nav;
         }
         &--color {
-            background-color: $fiveColor;
+            background-color: color-palette.$fiveColor;
         }
     }
 
@@ -352,7 +353,7 @@ $laptop-size: 1200px;
     .smallText {
         @include small-text(x-large, white);
         &__hover:hover {
-            color: pink;
+            color: color-palette.$hoverColor;
         }
     }
 
@@ -374,8 +375,16 @@ $laptop-size: 1200px;
             margin-bottom: 20px;
         }
     }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
 
     .social {
+        position: static;
         &__align {
             display: flex;
             align-items: center;

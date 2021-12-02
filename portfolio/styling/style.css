@@ -14,19 +14,15 @@
     margin-bottom: 20px;
   }
   .navBox__display {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: space-around;
+    align-items: center;
     list-style: none;
   }
   .navBox--color {
     background-color: #87986a;
   }
+
   .list {
     list-style: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -34,6 +30,7 @@
     color: white;
     text-decoration: none;
   }
+
   .smallText {
     font-family: Arial, Helvetica, sans-serif;
     font-size: small;
@@ -43,6 +40,7 @@
   .smallText__hover:hover {
     color: pink;
   }
+
   .mainText__header {
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
@@ -63,20 +61,25 @@
     text-align: center;
     margin-bottom: 10px;
   }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .social {
+    position: static;
+  }
   .social__align {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
   }
   .social__icons {
     color: white;
-    -webkit-transition: color 0.2s;
     transition: color 0.2s;
     text-decoration: none;
     margin: 0px 10px;
@@ -86,26 +89,21 @@
     color: black;
   }
 }
-
 @media only screen and (min-width: 577px) and (max-width: 768px) {
   .navBox__box {
     height: 50px;
     margin-bottom: 30px;
   }
   .navBox__display {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: space-around;
+    align-items: center;
     list-style: none;
   }
   .navBox--color {
     background-color: #87986a;
   }
+
   .list {
     list-style: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -113,6 +111,7 @@
     color: white;
     text-decoration: none;
   }
+
   .smallText {
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
@@ -122,6 +121,7 @@
   .smallText__hover:hover {
     color: pink;
   }
+
   .mainText__header {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
@@ -142,20 +142,25 @@
     text-align: center;
     margin-bottom: 10px;
   }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .social {
+    position: static;
+  }
   .social__align {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
   }
   .social__icons {
     color: white;
-    -webkit-transition: color 0.2s;
     transition: color 0.2s;
     text-decoration: none;
     margin: 0px 10px;
@@ -165,26 +170,21 @@
     color: black;
   }
 }
-
 @media only screen and (min-width: 769px) and (max-width: 992px) {
   .navBox__box {
     height: 60px;
     margin-bottom: 30px;
   }
   .navBox__display {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: space-around;
+    align-items: center;
     list-style: none;
   }
   .navBox--color {
     background-color: #87986a;
   }
+
   .list {
     list-style: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -192,6 +192,7 @@
     color: white;
     text-decoration: none;
   }
+
   .smallText {
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
@@ -201,6 +202,7 @@
   .smallText__hover:hover {
     color: pink;
   }
+
   .mainText__header {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
@@ -221,20 +223,25 @@
     text-align: center;
     margin-bottom: 10px;
   }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .social {
+    position: static;
+  }
   .social__align {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
   }
   .social__icons {
     color: white;
-    -webkit-transition: color 0.2s;
     transition: color 0.2s;
     text-decoration: none;
     margin: 0px 10px;
@@ -244,26 +251,21 @@
     color: black;
   }
 }
-
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
   .navBox__box {
     height: 60px;
     margin-bottom: 30px;
   }
   .navBox__display {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: space-around;
+    align-items: center;
     list-style: none;
   }
   .navBox--color {
     background-color: #87986a;
   }
+
   .list {
     list-style: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -271,6 +273,7 @@
     color: white;
     text-decoration: none;
   }
+
   .smallText {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
@@ -280,6 +283,7 @@
   .smallText__hover:hover {
     color: pink;
   }
+
   .mainText__header {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
@@ -300,20 +304,25 @@
     text-align: center;
     margin-bottom: 10px;
   }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .social {
+    position: static;
+  }
   .social__align {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
   }
   .social__icons {
     color: white;
-    -webkit-transition: color 0.2s;
     transition: color 0.2s;
     text-decoration: none;
     margin: 0px 10px;
@@ -323,26 +332,21 @@
     color: black;
   }
 }
-
 @media only screen and (min-width: 1201px) {
   .navBox__box {
     height: 60px;
     margin-bottom: 30px;
   }
   .navBox__display {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: space-around;
+    align-items: center;
     list-style: none;
   }
   .navBox--color {
     background-color: #87986a;
   }
+
   .list {
     list-style: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -350,6 +354,7 @@
     color: white;
     text-decoration: none;
   }
+
   .smallText {
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
@@ -359,6 +364,7 @@
   .smallText__hover:hover {
     color: pink;
   }
+
   .mainText__header {
     font-family: Arial, Helvetica, sans-serif;
     font-size: xx-large;
@@ -379,20 +385,25 @@
     text-align: center;
     margin-bottom: 20px;
   }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .social {
+    position: static;
+  }
   .social__align {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
   }
   .social__icons {
     color: white;
-    -webkit-transition: color 0.2s;
     transition: color 0.2s;
     text-decoration: none;
     margin: 0px 10px;
@@ -402,4 +413,5 @@
     color: black;
   }
 }
+
 /*# sourceMappingURL=style.css.map */

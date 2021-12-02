@@ -1,39 +1,6 @@
-$phone-size: 576px;
-$tablet-portrait-size: 768px;
-$tablet-landscape-size: 992px;
-$laptop-size: 1200px;
+@use "mediaQueries";
 
-@mixin phone {
-    @media only screen and (max-width: $phone-size) {
-        @content;
-    }
-}
-
-@mixin tablet-portrait {
-    @media only screen and (min-width: ($phone-size + 1)) and (max-width: $tablet-portrait-size) {
-        @content;
-    }
-}
-
-@mixin tablet-landscape {
-    @media only screen and (min-width: ($tablet-portrait-size + 1)) and (max-width: $tablet-landscape-size) {
-        @content;
-    }
-}
-
-@mixin laptop {
-    @media only screen and (min-width: ($tablet-landscape-size + 1)) and (max-width: $laptop-size) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media only screen and (min-width: ($laptop-size + 1)) {
-        @content;
-    }
-}
-
-@include phone {
+@include mediaQueries.phone {
     .skills {
         display: flex;
         align-items: center;
@@ -50,7 +17,7 @@ $laptop-size: 1200px;
         height: 150px;
     }
 }
-@include tablet-portrait() {
+@include mediaQueries.tablet-portrait() {
     .skills {
         display: flex;
         align-items: center;
@@ -67,7 +34,7 @@ $laptop-size: 1200px;
         height: 200px;
     }
 }
-@include tablet-landscape() {
+@include mediaQueries.tablet-landscape() {
     .skills {
         display: flex;
         align-items: center;
@@ -84,7 +51,7 @@ $laptop-size: 1200px;
         height: 250px;
     }
 }
-@include laptop() {
+@include mediaQueries.laptop() {
     .skills {
         display: flex;
         align-items: center;
@@ -101,7 +68,7 @@ $laptop-size: 1200px;
         height: 300px;
     }
 }
-@include desktop() {
+@include mediaQueries.desktop() {
     .skills {
         display: flex;
         align-items: center;

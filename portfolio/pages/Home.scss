@@ -1,37 +1,4 @@
-$phone-size: 576px;
-$tablet-portrait-size: 768px;
-$tablet-landscape-size: 992px;
-$laptop-size: 1200px;
-
-@mixin phone {
-    @media only screen and (max-width: $phone-size) {
-        @content;
-    }
-}
-
-@mixin tablet-portrait {
-    @media only screen and (min-width: ($phone-size + 1)) and (max-width: $tablet-portrait-size) {
-        @content;
-    }
-}
-
-@mixin tablet-landscape {
-    @media only screen and (min-width: ($tablet-portrait-size + 1)) and (max-width: $tablet-landscape-size) {
-        @content;
-    }
-}
-
-@mixin laptop {
-    @media only screen and (min-width: ($tablet-landscape-size + 1)) and (max-width: $laptop-size) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media only screen and (min-width: ($laptop-size + 1)) {
-        @content;
-    }
-}
+@use "mediaQueries";
 
 .banner {
     &__flex {
@@ -40,7 +7,7 @@ $laptop-size: 1200px;
     }
 }
 
-@include phone {
+@include mediaQueries.phone {
     img {
         width: 80%;
         border-radius: 30px;
@@ -71,7 +38,7 @@ $laptop-size: 1200px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 }
-@include tablet-portrait {
+@include mediaQueries.tablet-portrait {
     img {
         width: 80%;
         border-radius: 30px;
@@ -103,7 +70,7 @@ $laptop-size: 1200px;
     }
 }
 
-@include tablet-landscape {
+@include mediaQueries.tablet-landscape {
     img {
         width: 80%;
         border-radius: 30px;
@@ -135,7 +102,7 @@ $laptop-size: 1200px;
     }
 }
 
-@include laptop {
+@include mediaQueries.laptop {
     img {
         width: 80%;
         border-radius: 30px;
@@ -167,7 +134,7 @@ $laptop-size: 1200px;
     }
 }
 
-@include desktop {
+@include mediaQueries.desktop {
     img {
         width: 80%;
         border-radius: 30px;

@@ -1,37 +1,4 @@
-$phone-size: 576px;
-$tablet-portrait-size: 768px;
-$tablet-landscape-size: 992px;
-$laptop-size: 1200px;
-
-@mixin phone {
-    @media only screen and (max-width: $phone-size) {
-        @content;
-    }
-}
-
-@mixin tablet-portrait {
-    @media only screen and (min-width: ($phone-size + 1)) and (max-width: $tablet-portrait-size) {
-        @content;
-    }
-}
-
-@mixin tablet-landscape {
-    @media only screen and (min-width: ($tablet-portrait-size + 1)) and (max-width: $tablet-landscape-size) {
-        @content;
-    }
-}
-
-@mixin laptop {
-    @media only screen and (min-width: ($tablet-landscape-size + 1)) and (max-width: $laptop-size) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media only screen and (min-width: ($laptop-size + 1)) {
-        @content;
-    }
-}
+@use "mediaQueries";
 
 @mixin images($height, $width) {
     height: $height;
@@ -41,7 +8,7 @@ $laptop-size: 1200px;
     object-fit: cover;
 }
 
-@include phone {
+@include mediaQueries.phone {
     .photos {
         &__about {
             @include images(500px, 300px);
@@ -59,7 +26,7 @@ $laptop-size: 1200px;
     }
 }
 
-@include tablet-portrait() {
+@include mediaQueries.tablet-portrait() {
     .photos {
         &__about {
             @include images(600px, 400px);
@@ -77,7 +44,7 @@ $laptop-size: 1200px;
     }
 }
 
-@include tablet-landscape() {
+@include mediaQueries.tablet-landscape() {
     .photos {
         &__about {
             @include images(800px, 600px);
@@ -95,7 +62,7 @@ $laptop-size: 1200px;
     }
 }
 
-@include laptop() {
+@include mediaQueries.laptop() {
     .photos {
         &__about {
             @include images(900px, 700px);
@@ -113,7 +80,7 @@ $laptop-size: 1200px;
     }
 }
 
-@include desktop() {
+@include mediaQueries.desktop() {
     .photos {
         &__about {
             @include images(900px, 700px);
